@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Exiled.API.Enums;
+using Exiled.API.Extensions;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
 using Exiled.Events.EventArgs.Server;
@@ -94,12 +95,12 @@ public class Scp559Manager
             if (Round.IsEnded)
                 yield break;
 
-            Room room = Room.Get(GetRandomRoom());
+            Room room = GetRandomRoom();
             Vector3 spawnPoint = _entryPoint.Config.CakeConfig.SpawnPoints[room.Type] + Vector3.down * 1.8f;
 
             yield return Timing.WaitForSeconds(5f);
             
-            _cakeModel = ObjectSpawner.SpawnSchematic(_entryPoint.Config.CakeConfig.SchematicName, room.WorldPosition(spawnPoint), null, null, MapUtils.GetSchematicDataByName(_entryPoint.Config.CakeConfig.SchematicName));
+            _cakeModel = ObjectSpawner.SpawnSchematic(_entryPoint.Config.CakeConfig.SchematicName, room.WorldPosition(spawnPoint), null, null, MapUtils.GetSchematicDataByName(_entryPoint.Config.CakeConfig.SchematicName), false);
 
             yield return Timing.WaitForSeconds(_entryPoint.Config.CakeConfig.DisappearDelay);
             
@@ -128,15 +129,7 @@ public class Scp559Manager
             yield return Timing.WaitForSeconds(1f);
         }
     }
-    
-    private RoomType GetRandomRoom()
-    {
-        Random random = new Random();
-        
-        List<RoomType> roomNames = _entryPoint.Config.CakeConfig.SpawnPoints.Keys.ToList();
-        
-        int index = random.Next(roomNames.Count);
-        
-        return roomNames[index];
-    }
+
+    private Room GetRandomRoom() =>
+        Player.List.GetRandomValue(t => t.IsHuman && t.CurrentRoom != null && _entryPoint.Config.CakeConfig.SpawnPoints.Keys.Contains(t.CurrentRoom.Type))?.CurrentRoom;
 }
