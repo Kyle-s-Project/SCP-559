@@ -9,7 +9,7 @@ namespace Scp559;
 public class Config : IConfig
 {
     [Description("Is the Plugin Enabled?")]
-    public bool IsEnabled { get; set; } = true;
+    public bool IsEnabled { get; set; } = false;
 
     [Description("Enable this if you want to be spammed with extra logs in your console")]
     public bool Debug { get; set; } = false;

@@ -1,129 +1,300 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
-            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{666EE640-4161-4C48-B092-8B5112EE7735}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Scp559</RootNamespace>
-        <AssemblyName>Scp559</AssemblyName>
-        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <LangVersion>11</LangVersion>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="0Harmony">
-          <HintPath>..\..\Universe\UniverseModule\bin\Debug\0Harmony.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp">
-          <HintPath>..\..\AssemblyPublicizer\AssemblyPublicizer\bin\Debug\net8.0\Publicized-Assemblies\Assembly-CSharp-Publicized.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp-firstpass">
-          <HintPath>D:\Coding\Forks\KryptoneCore\KryptoneCore\bin\Debug\Assembly-CSharp-firstpass.dll</HintPath>
-        </Reference>
-        <Reference Include="CommandSystem.Core">
-          <HintPath>D:\Steam Biblioteca\steamapps\common\SCP Secret Laboratory Dedicated Server\SCPSL_Data\Managed\CommandSystem.Core.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.API, Version=8.9.6.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\Exiled.API.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.CreditTags, Version=8.9.6.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\Exiled.CreditTags.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.CustomItems, Version=8.9.6.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\Exiled.CustomItems.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.CustomRoles, Version=8.9.6.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\Exiled.CustomRoles.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.Events, Version=8.9.6.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\Exiled.Events.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.Loader, Version=8.9.6.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\Exiled.Loader.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.Permissions, Version=8.9.6.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\Exiled.Permissions.dll</HintPath>
-        </Reference>
-        <Reference Include="MapEditorReborn">
-          <HintPath>..\..\..\Downloads\MapEditorReborn.dll</HintPath>
-        </Reference>
-        <Reference Include="Mirror">
-          <HintPath>..\..\Universe\UniverseModule\bin\Debug\Mirror_publicized.dll</HintPath>
-        </Reference>
-        <Reference Include="NorthwoodLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\NorthwoodLib.dll</HintPath>
-        </Reference>
-        <Reference Include="PluginAPI, Version=13.1.2.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\PluginAPI.dll</HintPath>
-        </Reference>
-        <Reference Include="Pooling">
-          <HintPath>..\..\Universe\UniverseModule\bin\Debug\Pooling.dll</HintPath>
-        </Reference>
-        <Reference Include="System"/>
-        <Reference Include="System.Core"/>
-        <Reference Include="System.Data"/>
-        <Reference Include="System.Xml"/>
-        <Reference Include="UnityEngine.CoreModule">
-          <HintPath>..\..\Universe\UniverseModule\bin\Debug\UnityEngine.CoreModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.PhysicsModule">
-          <HintPath>..\..\Universe\UniverseModule\bin\Debug\UnityEngine.PhysicsModule.dll</HintPath>
-        </Reference>
-        <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
-          <HintPath>..\packages\EXILED.8.9.6\lib\net48\YamlDotNet.dll</HintPath>
-        </Reference>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="Commands\RoomPoint.cs" />
-        <Compile Include="Config.cs" />
-        <Compile Include="EntryPoint.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs"/>
-        <Compile Include="Scp559Manager.cs" />
-        <Compile Include="Utilities\StartupChecks.cs" />
-        <Compile Include="Utilities\Components\Scp559RestoreEffect.cs" />
-        <Compile Include="Utilities\Components\Scp559SizeEffect.cs" />
-        <Compile Include="Utilities\Pooling\OpusDecoderPool.cs" />
-        <Compile Include="Utilities\Pooling\OpusEncoderPool.cs" />
-        <Compile Include="Utilities\Pooling\PitchShifterPool.cs" />
-        <Compile Include="Utilities\RoomPoint\RoomPointObject.cs" />
-        <Compile Include="Utilities\RoomPoint\SerializedVector3.cs" />
-        <Compile Include="Utilities\Voice\PitchShifter.cs" />
-        <Compile Include="Utilities\Voice\VoicePitchUtilities.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="packages.config" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{666EE640-4161-4C48-B092-8B5112EE7735}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Scp559</RootNamespace>
+    <AssemblyName>Scp559</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>11</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Commands\RoomPoint.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scp559Manager.cs" />
+    <Compile Include="Utilities\StartupChecks.cs" />
+    <Compile Include="Utilities\Components\Scp559RestoreEffect.cs" />
+    <Compile Include="Utilities\Components\Scp559SizeEffect.cs" />
+    <Compile Include="Utilities\Pooling\OpusDecoderPool.cs" />
+    <Compile Include="Utilities\Pooling\OpusEncoderPool.cs" />
+    <Compile Include="Utilities\Pooling\PitchShifterPool.cs" />
+    <Compile Include="Utilities\RoomPoint\RoomPointObject.cs" />
+    <Compile Include="Utilities\RoomPoint\SerializedVector3.cs" />
+    <Compile Include="Utilities\Voice\PitchShifter.cs" />
+    <Compile Include="Utilities\Voice\VoicePitchUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="AdvancedHints, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\AdvancedHints.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\Links\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp_publicized, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Assembly-CSharp_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Caress, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Caress.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\CommandSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpDiscordWebhook, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\CSharpDiscordWebhook.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient">
+      <HintPath>..\..\..\Links\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicServerName, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\DynamicServerName.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.API, Version=9.2.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Exiled.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CreditTags, Version=9.2.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Exiled.CreditTags.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CustomItems, Version=9.2.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Exiled.CustomItems.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CustomRoles, Version=9.2.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Exiled.CustomRoles.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Events, Version=9.2.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Exiled.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Loader, Version=9.2.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Exiled.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Permissions, Version=9.2.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Exiled.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Updater, Version=3.1.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Exiled.Updater.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64">
+      <HintPath>..\..\..\Links\Facepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="FunToolBox, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\FunToolBox.dll</HintPath>
+    </Reference>
+    <Reference Include="MapEditorReborn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\MapEditorReborn.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Sqlite, Version=6.0.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Mirror.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror-Publicized">
+      <HintPath>..\..\..\Links\Mirror-Publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror.Components, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Mirror.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="MiscPlugins, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\MiscPlugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\Links\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\..\..\Links\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\..\..\Links\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\..\..\Links\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Posix, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Mono.Posix.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\Links\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>..\..\..\Links\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.1.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NorthwoodLib, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\NorthwoodLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PluginAPI, Version=13.1.5.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\PluginAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Pooling, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\Pooling.dll</HintPath>
+    </Reference>
+    <Reference Include="RaidCheaterDefence">
+      <HintPath>..\..\..\Links\RaidCheaterDefence.dll</HintPath>
+    </Reference>
+    <Reference Include="SCPSLAudioApi, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\SCPSLAudioApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SemanticVersioning, Version=2.0.2.0, Culture=neutral, PublicKeyToken=a89bb7dc6f7a145c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\SemanticVersioning.dll</HintPath>
+    </Reference>
+    <Reference Include="SemVer, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a89bb7dc6f7a145c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\SemVer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel.Internals, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\System.ServiceModel.Internals.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="VaultLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\VaultLib.dll</HintPath>
+    </Reference>
+    <Reference Include="VoiceChatExtension">
+      <HintPath>..\..\..\Links\VoiceChatExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Links\YamlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing">
+      <HintPath>..\..\..\Links\zxing.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">
     </Target>
     <Target Name="AfterBuild">
     </Target>
     -->
-
 </Project>

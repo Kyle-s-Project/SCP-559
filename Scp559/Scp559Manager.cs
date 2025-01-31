@@ -97,11 +97,11 @@ public class Scp559Manager
                 yield break;
 
             Room room = GetRandomRoom();
-            Vector3 spawnPoint = _entryPoint.Config.CakeConfig.SpawnPoints[room.Type] + Vector3.down * 1.8f;
+            Vector3 spawnPoint = _entryPoint.Config.CakeConfig.SpawnPoints[room.Type];
 
             yield return Timing.WaitForSeconds(5f);
             
-            _cakeModel = ObjectSpawner.SpawnSchematic(_entryPoint.Config.CakeConfig.SchematicName, room.WorldPosition(spawnPoint), null, null, MapUtils.GetSchematicDataByName(_entryPoint.Config.CakeConfig.SchematicName), false);
+            _cakeModel = ObjectSpawner.SpawnSchematic(_entryPoint.Config.CakeConfig.SchematicName, room.transform.TransformPoint(spawnPoint), null, null, MapUtils.GetSchematicDataByName(_entryPoint.Config.CakeConfig.SchematicName));
 
             yield return Timing.WaitForSeconds(_entryPoint.Config.CakeConfig.DisappearDelay);
             

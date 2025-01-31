@@ -13,7 +13,7 @@ public class EntryPoint : Plugin<Config>
 
     public override string Prefix { get; } = "scp_559";
 
-    public override Version Version { get; } = new(0, 0, 3);
+    public override Version Version { get; } = new(0, 0, 4);
 
     public override Version RequiredExiledVersion { get; } = new(8, 9, 6);
 
